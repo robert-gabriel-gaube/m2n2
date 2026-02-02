@@ -255,39 +255,39 @@ def prepare_fbrs_datasets(grabcut=True, berkeley=True, sbd=True, davis=True, bra
     # Based on this repository: https://github.com/SamsungLabs/fbrs_interactive_segmentation?tab=readme-ov-file
     if grabcut:
         convert_fbrs_dataset(
-            download_url='https://github.com/saic-vul/fbrs_interactive_segmentation/releases/download/v1.0/GrabCut.zip',
-            target_download_directory='./datasets/raw',
-            images_folder='./datasets/raw/GrabCut/data_GT',
-            segments_folder='./datasets/raw/GrabCut/boundary_GT',
+            images_folder='/content/datasets/raw/GrabCut/data_GT',
+            segments_folder='/content/datasets/raw/GrabCut/boundary_GT',
             out_dataset_folder='./datasets/coco/GrabCut',
-            description='FBRS Version of GrabCut Dataset'
+            description='FBRS Version of GrabCut Dataset',
+            download_url=None,
+            target_download_directory=None
         )
 
     if berkeley:
         convert_fbrs_dataset(
-            download_url='https://github.com/saic-vul/fbrs_interactive_segmentation/releases/download/v1.0/Berkeley.zip',
-            target_download_directory='./datasets/raw',
-            images_folder='./datasets/raw/Berkeley/images',
-            segments_folder='./datasets/raw/Berkeley/masks',
+            images_folder='/content/datasets/raw/Berkeley/images',
+            segments_folder='/content/datasets/raw/Berkeley/masks',
             out_dataset_folder='./datasets/coco/Berkeley',
-            description='FBRS Version of Berkeley Dataset'
+            description='FBRS Version of Berkeley Dataset',
+            download_url=None,
+            target_download_directory=None
         )
 
     if davis:
         convert_fbrs_dataset(
-            download_url='https://github.com/saic-vul/fbrs_interactive_segmentation/releases/download/v1.0/DAVIS.zip',
-            target_download_directory='./datasets/raw',
-            images_folder='./datasets/raw/DAVIS/img',
-            segments_folder='./datasets/raw/DAVIS/gt',
+            images_folder='/content/datasets/raw/DAVIS/img',
+            segments_folder='/content/datasets/raw/DAVIS/gt',
             out_dataset_folder='./datasets/coco/DAVIS',
-            description='FBRS Version of DAVIS Dataset'
+            description='FBRS Version of DAVIS Dataset',
+            download_url=None,
+            target_download_directory=None
         )
 
     if sbd:
         convert_sbd_dataset(
-            download_torchvision_dataset='./datasets/raw/torchvision_sbd',
+            download_torchvision_dataset='/content/datasets/raw/torchvision_sbd',
             out_dataset_folder='./datasets/coco/SBD',
-            image_set='val',
+            image_set='val',     # or 'train'
             download=True
         )
 

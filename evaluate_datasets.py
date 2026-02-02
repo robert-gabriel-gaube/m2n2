@@ -239,7 +239,10 @@ def main():
         if not selected_datasets[dataset_key]:
             continue
 
-        attention_aggregator = StableDiffusion2AttentionAggregator(device='cuda:0')
+        attention_aggregator = StableDiffusion2AttentionAggregator(
+            device='cuda:0',
+            hugging_face_model_id="SagiPolaczek/stable-diffusion-2-1-base")
+        
         model = M2N2SegmentationModel(attention_aggregator)
         evaluate_dataset(
             dataset_key=dataset_key,
