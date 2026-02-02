@@ -255,8 +255,8 @@ def prepare_fbrs_datasets(grabcut=True, berkeley=True, sbd=True, davis=True, bra
     # Based on this repository: https://github.com/SamsungLabs/fbrs_interactive_segmentation?tab=readme-ov-file
     if grabcut:
         convert_fbrs_dataset(
-            images_folder='/content/datasets/raw/GrabCut/data_GT',
-            segments_folder='/content/datasets/raw/GrabCut/boundary_GT',
+            images_folder='/content/datasets/raw/GrabCut/GrabCut/data_GT',
+            segments_folder='/content/datasets/raw/GrabCut/GrabCut/boundary_GT',
             out_dataset_folder='./datasets/coco/GrabCut',
             description='FBRS Version of GrabCut Dataset',
             download_url=None,
@@ -265,8 +265,8 @@ def prepare_fbrs_datasets(grabcut=True, berkeley=True, sbd=True, davis=True, bra
 
     if berkeley:
         convert_fbrs_dataset(
-            images_folder='/content/datasets/raw/Berkeley/images',
-            segments_folder='/content/datasets/raw/Berkeley/masks',
+            images_folder='/content/datasets/raw/Berkeley/Berkeley/images',
+            segments_folder='/content/datasets/raw/Berkeley/Berkeley/masks',
             out_dataset_folder='./datasets/coco/Berkeley',
             description='FBRS Version of Berkeley Dataset',
             download_url=None,
@@ -275,8 +275,8 @@ def prepare_fbrs_datasets(grabcut=True, berkeley=True, sbd=True, davis=True, bra
 
     if davis:
         convert_fbrs_dataset(
-            images_folder='/content/datasets/raw/DAVIS/img',
-            segments_folder='/content/datasets/raw/DAVIS/gt',
+            images_folder='/content/datasets/raw/DAVIS/DAVIS345/img',
+            segments_folder='/content/datasets/raw/DAVIS/DAVIS345/gt',
             out_dataset_folder='./datasets/coco/DAVIS',
             description='FBRS Version of DAVIS Dataset',
             download_url=None,
